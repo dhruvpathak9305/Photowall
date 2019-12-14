@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React,{Component } from "react";
+import ReactDOM from "react-dom";
 
-var tasks=['first item','second item','third item'];
+// var tasks = ["first item", "second item", "third item"];
 
 // const element =<ol>
 //     <li>First item</li>
@@ -16,8 +16,74 @@ var tasks=['first item','second item','third item'];
 //     <li>{tasks[2]}</li>
 //  </ol>
 
-const element=<ol>
-    {tasks.map((item,index)=><li key={index}>{item}</li>)}
-</ol>
+// const element = (
+//   <ol>
+//     {tasks.map((item, index) => (
+//       <li key={index}>{item}</li>
+//     ))}
+//   </ol>
+// );
 
-ReactDOM.render(element,document.getElementById('root'));
+//Title was hard coded 
+// class Title extends Component{
+//   render() {
+//     return <h1>Title</h1>;
+//   }
+// }
+
+//Task array was hard coded
+// class List extends Component{
+//     render() {
+//       return (<ol>
+//         {tasks.map((item, index) => (
+//           <li key={index}>{item}</li>
+//         ))}
+//       </ol>)
+//     }
+//   }
+
+
+  //Task array was hard coded
+//   class Main extends Component{
+//     render() {
+//       return (
+//           <div>
+//             <Title/>
+//           <List/>
+//           </div>
+          
+//       )
+//     }
+//   }
+
+// Title is passed as props 
+class Title extends Component{
+  render() {
+    return <h1>{this.props.title}</h1>;
+  }
+}
+
+//Task is pass as the the props to the List Component
+class List extends Component{
+    render() {
+      return (<ol>
+        {this.props.tasks.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ol>)
+    }
+  }
+//Now we are passing the task array as props to the List component.
+  class Main extends Component{
+    render() {
+      return (
+          <div>
+            <Title title={"Todos"}/>
+           <List tasks={["first item", "second item", "third item"]}/>
+          </div>
+          
+      )
+    }
+  }
+
+ReactDOM.render(<Main/>, document.getElementById("root"));
