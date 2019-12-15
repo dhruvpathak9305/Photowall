@@ -1,7 +1,11 @@
 html{
     font-size:10px;
+    font-family: sans-serif;
 }
-
+p{
+    font-size:1.6rem ;
+    line-height: 1.5rem;
+}
 h1{
     font-family:'billabong';
     text-align: center;
@@ -32,4 +36,26 @@ border:1px solid #d3d3d3;
 padding:2rem;
 flex-grow:1;
 margin:0 2rem 2rem 2rem; 
+}
+
+.photo{
+    width:calc(100% + 4rem);
+    margin:-2rem 0 0 -2rem;
+    
+}
+
+.button-container{
+    display:flex;
+    justify-content: center;
+    margin:0 auto;
+
+}
+
+.remove-button{
+flex-basis:48%;
+color :red;
+font-size:15px;
+border: 2px solid #f2f2f2;
+line-height:2;
+padding :5px;
 }
