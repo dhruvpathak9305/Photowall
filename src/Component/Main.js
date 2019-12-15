@@ -23,21 +23,30 @@ constructor(){
       }]
   }
   this.removePhoto=this.removePhoto.bind(this);
+  
 }
 removePhoto(postRemoved){
 console.log(postRemoved.description);
 this.setState((state)=>({posts:state.posts.filter(post=>post!==postRemoved)
 }))
 }
+
+componentDidMount(){
+
+}
+componentDidUpdate(prevProps,prevState){
+  console.log(prevState.posts)
+  console.log(this.state)
+}
     render() {
+    
       return (
           <div>
            <Title title={"Photowall"}/>
            <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto}/>
           </div>
-           
-         
           )
     }
   }
+
   export default Main
