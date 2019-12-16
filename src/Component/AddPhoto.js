@@ -4,7 +4,13 @@ export class AddPhoto extends Component {
     render() {
         return (
             <div>
-                <h1>This is the page where we add photos</h1>
+                <h1>Photowall</h1>
+                <form className='form'>
+                    <input type='text' placeholder='link'/>
+                    <input type='text' placeholder='description'/>
+                    <button>Post</button>
+                </form>
+
             </div>
         )
     }
