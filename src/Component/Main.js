@@ -25,12 +25,17 @@ constructor(){
    
   }
   this.removePhoto=this.removePhoto.bind(this); 
+  this.addPhoto=this.addPhoto.bind(this); 
 
 }
 removePhoto(postRemoved){
 console.log(postRemoved.description);
 this.setState((state)=>({posts:state.posts.filter(post=>post!==postRemoved)
 }))
+}
+
+addPhoto(postSubmitted){
+  this.setState(state=>({posts:state.posts.concat([postSubmitted])}))
 }
 
 componentDidMount(){
@@ -50,7 +55,13 @@ componentDidUpdate(prevProps,prevState){
 <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/>
  </div>
  )}/>
-           <Route path='/AddPhoto' component={AddPhoto}/>
+           <Route path='/AddPhoto' render={({history})=>(
+             <AddPhoto onAddPhoto={(addedPost)=>{
+             this.addPhoto(addedPost)
+             history.push('/');
+             }}/>
+            
+           )}/>
             </div>
           )
     }
