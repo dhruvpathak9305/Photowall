@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 function Photowall(props) {
   return (
+ 
     <div>
       <Link onClick={props.onNavigate} to="/AddPhoto" className="addIcon">
         +
@@ -25,7 +26,7 @@ function Photowall(props) {
 
 Photowall.propTypes = {
   posts: PropTypes.array.isRequired,
-  onRemovePhoto: PropTypes.func.isRequired
+ 
 };
 
 export default Photowall;
