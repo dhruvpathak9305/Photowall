@@ -15,14 +15,15 @@ const post={
     imageLink:imageLink
 }
 if(imageLink && description){
-this.props.onAddPhoto(post);
+this.props.addPost(post);
+this.props.onHistory.push('/');
 
 }
     }
     render() {
         return (
             <div>
-                <h1>Photowall</h1>
+                
                 <form onSubmit={this.handleSubmit} className='form'>
                     <input type='text' placeholder='link' name='imageLink'/>
                     <input type='text' placeholder='description' name='description'/>

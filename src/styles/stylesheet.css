@@ -17,6 +17,11 @@ color:black;
 text-decoration: none;
 }
 
+h1 a{
+    color:black;
+    text-decoration: none;
+}
+
 /* to install font family from online */
 @font-face{
     font-family:'billabong';
