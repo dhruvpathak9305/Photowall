@@ -9,9 +9,7 @@ constructor(){
   super()
  
   }
-  componentDidMount(){
-    this.props.removePost(1);
-  }
+
     render() {
    console.log(this.props);
       return (
