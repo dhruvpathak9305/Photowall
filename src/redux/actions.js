@@ -47,6 +47,27 @@ return database.ref(`comments/${postId}`).push(comment).then(
 })
 }
 
+export function startLoadingComments(comment,postId){
+   return ((dispatch)=>{
+return database.ref(`comments`).once('value').then(  
+   (snapshot)=>{
+      let comments={}
+      snapshot.forEach((childSnapshot)=>{
+         comments[childSnapshot.key]=Object.values(childSnapshot.val())
+      })
+      dispatch(loadComments(comments))
+   }).catch(error=>{
+      console.log(error)
+   })  
+})
+}
+
+export function loadCommnts(comments){
+return {
+   type:'LOAD_COMMENTS',
+   comments
+}
+}
 
 //remove
 
