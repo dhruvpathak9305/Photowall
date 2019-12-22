@@ -15,7 +15,10 @@ const post = props.post;
       <div className="button-container">
         <button
         
-          onClick={() => {props.removePost(props.index)}}
+          onClick={() => {
+            props.removePost(props.index)
+          props.history.push('/')
+          }}
         >
           Remove
         </button>
