@@ -14,9 +14,8 @@ const post = props.post;
       </figcaption>
       <div className="button-container">
         <button
-        
           onClick={() => {
-            props.removePost(props.index)
+            props.startRemovingPost(props.index,post.id)
           props.history.push('/')
           }}
         >

@@ -23,6 +23,15 @@ posts.push(childSnapshot.val())
 })
 }
 
+export function startRemovingPost(index,id){
+   return ((dispatch)=>{
+return database.ref(`posts/${id}`).remove().then(  
+   ()=>{
+      dispatch(removePost(index))
+   })  
+})
+}
+
 //remove
 
 export function removePost(index){
